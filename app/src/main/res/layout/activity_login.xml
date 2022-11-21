@@ -1,9 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="12dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.LoginActivity">
+    tools:context=".ui.RegisterActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:src="@drawable/instagram"
+        tools:ignore="ImageContrastCheck" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edit_exit_background"
+        android:hint="@string/email"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        android:textColorHint="#00838F"
+        tools:ignore="TextContrastCheck"
+        android:autofillHints=""
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edit_exit_background"
+        android:hint="@string/password"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        android:textColorHint="#00838F"
+        tools:ignore="TextContrastCheck"
+        android:autofillHints=""
+        android:inputType="numberPassword|textPassword" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15sp"
+        android:background="@drawable/button_background"
+        android:padding="10dp"
+        android:textAllCaps="false"
+        android:text="@string/log_in"
+        android:textColor="#00838F"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/register_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/new_guy_click_here"
+        android:textStyle="bold|italic" />
+
+</LinearLayout>

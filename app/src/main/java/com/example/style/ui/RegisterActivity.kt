@@ -9,6 +9,10 @@ import com.example.style.databinding.ActivityRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -48,7 +52,6 @@ class RegisterActivity : AppCompatActivity() {
             startActivity(
                 Intent(this, LoginActivity::class.java)
             )
-            // TODO : anything wrong watch here
             finish()
         }
 
@@ -63,12 +66,17 @@ class RegisterActivity : AppCompatActivity() {
             } else if (txtPasswd.length < 6) {
                 Toast.makeText(this, "Length of Password must be more than 5!", Toast.LENGTH_SHORT).show()
             } else {
-                registerUser(txtUserName, txtName, txtEmail, txtPasswd)
+                val job = Job()
+                if (
+                    CoroutineScope(job).launch(Dispatchers.IO) { registerUser(txtUserName, txtName, txtEmail, txtPasswd) }.isCompleted
+                ) {
+                    job.cancel()
+                }
             }
         }
     }
 
-    private fun registerUser(
+    private suspend fun registerUser(
         txtUserName: String,
         txtName: String,
         txtEmail: String,
