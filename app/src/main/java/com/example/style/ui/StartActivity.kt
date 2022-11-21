@@ -4,8 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.animation.TranslateAnimation
 import androidx.appcompat.app.AppCompatActivity
+import com.example.style.MainActivity
 import com.example.style.animation.MyAnimationListener
 import com.example.style.databinding.ActivityStartBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class StartActivity : AppCompatActivity() {
 
@@ -30,6 +32,15 @@ class StartActivity : AppCompatActivity() {
                 Intent(this, RegisterActivity::class.java)
                     .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
             )
+        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        if (FirebaseAuth.getInstance().currentUser != null) {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
         }
     }
 
