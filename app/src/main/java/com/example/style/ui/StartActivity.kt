@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.animation.TranslateAnimation
 import androidx.appcompat.app.AppCompatActivity
-import com.example.style.MainActivity
 import com.example.style.animation.MyAnimationListener
 import com.example.style.databinding.ActivityStartBinding
 import com.google.firebase.auth.FirebaseAuth

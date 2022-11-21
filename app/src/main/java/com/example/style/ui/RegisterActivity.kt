@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.style.MainActivity
 import com.example.style.databinding.ActivityRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -90,6 +89,8 @@ class RegisterActivity : AppCompatActivity() {
                     put("email", txtEmail)
                     put("userName", txtUserName)
                     mAuth.currentUser?.let { it1 -> put("id", it1.uid) }
+                    put("bio", "")
+                    put("imageUrl", "default")
                 }
                 mAuth.currentUser
                     ?.let { it1 -> mRootRef.child("Users").child(it1.uid) }
