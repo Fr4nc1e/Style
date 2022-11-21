@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Style</string>
+    <string name="log_in">Log In</string>
+    <string name="register">Register</string>
+    <string name="logo">Logo</string>
+    <string name="startLogo">startLogo</string>
+    <string name="user_name">User Name</string>
+    <string name="name">Name</string>
+    <string name="password">Password</string>
+    <string name="already_a_user_login">Already a user? LogIn</string>
+    <string name="email">Email</string>
 </resources>
