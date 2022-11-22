@@ -16,4 +16,6 @@
     <string name="notification_fragment">Notification Fragment</string>
     <string name="profile_fragment">Profile Fragment</string>
     <string name="search_fragment">Search Fragment</string>
+    <string name="description">Description</string>
+    <string name="post">POST</string>
 </resources>
