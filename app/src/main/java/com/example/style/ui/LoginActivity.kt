@@ -15,9 +15,7 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
 
-    private val mAuth: FirebaseAuth by lazy {
-        FirebaseAuth.getInstance()
-    }
+    private lateinit var mAuth: FirebaseAuth
 
     private val txtEmail: String by lazy {
         binding.email.text.toString()
@@ -31,6 +29,8 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        mAuth = FirebaseAuth.getInstance()
 
         binding.registerUser.setOnClickListener {
             startActivity(

@@ -71,6 +71,7 @@
             android:maxLines="5"
             android:minHeight="48dp"
             android:textAlignment="center"
+            android:textColorHint="#009688"
             android:textIsSelectable="true"
             android:textStyle="bold|italic"
             app:hashtagColor="@color/teal_200"

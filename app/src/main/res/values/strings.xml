@@ -18,4 +18,5 @@
     <string name="search_fragment">Search Fragment</string>
     <string name="description">Description</string>
     <string name="post">POST</string>
+    <string name="search">Search</string>
 </resources>
